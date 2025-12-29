@@ -75,24 +75,13 @@ Udemy 教材
 
 ```text
 .
-├── 404.php
-├── archive-access.php
-├── archive-product.php
-├── footer.php
-├── front-page.php
-├── functions.php
-├── header.php
-├── index.php
-├── page-company.php
-├── page-contact.php
-├── page-message.php
-├── page-privacy.php
-├── single-business.php
-├── single-product.php
-├── single.php
-├── style.css
+├── about.html
+├── contact.html
+├── index.html
+├── news.html
+├── recruit.html
+├── service.html
 ├── css
-│   ├── editor-style.css
 │   ├── style.css
 │   ├── style.css.map
 │   └── vendor
@@ -100,47 +89,72 @@ Udemy 教材
 ├── img
 ├── js
 │   ├── component
-│   │   ├── cta-auto-scroll.js
 │   │   ├── hamburger-menu.js
-│   │   ├── product-single-gallery.js
-│   │   ├── scroll-top-button.js
-│   │   ├── switch-viewport.js
-│   │   ├── toc-scrolltrigger.js
-│   │   ├── top-kv-slider.js
-│   │   └── top-product-slider.js
+│   │   ├── header-background-toggle.js
+│   │   └── scroll-animations.js
 │   ├── main.js
+│   ├── slider
+│   │   ├── gallery-slider.js
+│   │   └── staff-slider.js
 │   └── vendor
 │       ├── gsap.min.js
-│       ├── ScrollToPlugin.min.js
 │       ├── ScrollTrigger.min.js
 │       ├── splide-extension-auto-scroll.min.js
 │       └── splide.min.js
-├── scss
-│   ├── component
-│   ├── foundation
-│   ├── global
-│   ├── layout
-│   ├── page
-│   │   ├── access
-│   │   ├── business
-│   │   ├── company
-│   │   ├── contact
-│   │   ├── message
-│   │   ├── news
-│   │   ├── product
-│   │   └── top
-│   ├── utility
-│   ├── editor-style.scss
-│   └── style.scss
-└── template-parts
-    ├── breadcrumb.php
-    ├── loop-business.php
-    ├── loop-news.php
-    ├── loop-products.php
-    ├── sidebar-news.php
-    ├── subkv-archive.php
-    ├── subkv-single-news.php
-    └── subkv-single.php
+└── scss
+    ├── component
+    │   ├── _breadcrumb.scss
+    │   ├── _button.scss
+    │   ├── _entry-button.scss
+    │   ├── _form.scss
+    │   ├── _index.scss
+    │   ├── _news-item.scss
+    │   ├── _page-kv.scss
+    │   ├── _pagination.scss
+    │   └── _title.scss
+    ├── foundation
+    │   ├── _base.scss
+    │   ├── _index.scss
+    │   └── _reset.scss
+    ├── global
+    │   ├── _breakpoints.scss
+    │   ├── _color.scss
+    │   ├── _font.scss
+    │   ├── _index.scss
+    │   └── _z-index.scss
+    ├── layout
+    │   ├── _container.scss
+    │   ├── _footer.scss
+    │   ├── _header.scss
+    │   └── _index.scss
+    ├── page
+    │   ├── _index.scss
+    │   ├── about
+    │   │   ├── _about-company.scss
+    │   │   ├── _about-philosophy.scss
+    │   │   └── _about-staff.scss
+    │   ├── contact
+    │   │   └── _contact-form.scss
+    │   ├── news
+    │   │   └── _news-archive.scss
+    │   ├── recruit
+    │   │   ├── _recruit-benefit.scss
+    │   │   ├── _recruit-culture.scss
+    │   │   └── _recruit-position.scss
+    │   ├── service
+    │   │   ├── _service-case.scss
+    │   │   └── _service-detail.scss
+    │   └── top
+    │       ├── _top-about.scss
+    │       ├── _top-kv.scss
+    │       ├── _top-news.scss
+    │       ├── _top-recruit.scss
+    │       └── _top-service.scss
+    ├── style.scss
+    └── utility
+        ├── _index.scss
+        └── _utility.scss
+
 ```
 
 ## 💻 Development Environment（開発環境）
