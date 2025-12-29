@@ -11,16 +11,22 @@
 
 ## 📝 Overview（概要）
 
-Udemy 教材（【超実践 ①】Figma からの HP コーディング - Web 制作会社が教える静的サイト制作/HelloMentor）を使って作成した **就活スクール「Career Launch」のコーポレートサイト** です。
-**Figma デザインカンプから静的コーディング**を行いました。
+Udemy 教材
+**「【超実践 ①】Figma からの HP コーディング - Web 制作会社が教える静的サイト制作 / HelloMentor」**
+を参考に制作した、**転職・キャリア支援サービスを想定したコーポレートサイト**です。
 
-- WordPress テーマ化（PHP / テンプレート階層に沿って構築）
-- カスタム投稿タイプ：product / business / access
-- ACF による管理画面フィールド最適化
-- GSAP（ScrollTrigger / SmoothScroll）・Splide を使ったアニメーション
-- 保守性を意識した CSS 設計手法 / SCSS による再利用性の高いコーディング
-- 管理画面の使いやすさと実務的なセキュリティを考慮
-- レスポンシブ対応（SP / PC）
+まずは **Figma のデザインカンプを元に自力でコーディングを行い**、
+完成後に解説動画を視聴する形で作成を進めました。
+
+**リキッドレイアウトを前提とした設計**のもと、
+実務を想定しアニメーションの多用を避けながら、ユーザー体験を損なわない UI 設計を意識しています。
+
+- 静的 HTML による複数ページ構成（Top + 下層 5 ページ）
+- GSAP / ScrollTrigger を用いたスクロールアニメーション
+- Splide を用いたスライダー実装
+- **900px をブレイクポイントとしたメディアクエリによるレスポンシブ対応**
+- **CSS Grid / subgrid を併用し、画面サイズやコンテンツ量が変化しても崩れにくいレイアウトを意識**
+- PerfectPixel によるデザイン再現性の担保
 
 &nbsp;
 
@@ -30,45 +36,40 @@ Udemy 教材（【超実践 ①】Figma からの HP コーディング - Web �
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" alt="HTML5" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" alt="CSS3" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" alt="SCSS" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" alt="JavaScript" >
- <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black" width="50" alt="GSAP" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" alt="JavaScript" />
+<img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black" width="50" alt="GSAP" />
 <img src="https://img.shields.io/badge/Splide-005BBB?style=for-the-badge" width="50" alt="Splide" />
-
 </p>
 
 &nbsp;
 
 ## ✨ Features（制作ポイント）
 
-### 1. WordPress オリジナルテーマとして構築
+### 1. ScrollTrigger を用いたスクロールアニメーション
 
-- テンプレート階層（front-page / archive / single など）に沿って実装
-- 製品・事業紹介・アクセスを **CPT** で管理
-- ACF による管理画面のフィールド最適化
+- 各ページの主要セクションに限定してスクロールアニメーションを実装
+- アニメーションの多用による視認性低下や離脱を防ぎ、全体バランスを重視
 
-### 2. Splide + SVG（Web Animation API）を用いたアニメーション実装
+### 2. スクロール方向を考慮したヘッダー制御
 
-- Splide のスライダー機能
-- スライド切替に連動する SVG プログレスリングと画像のズーム演出
-- CTA 部分は auto-scroll（流れる文字）で実装
+- top-kv 通過を ScrollTrigger で判定
+- 以降はスクロール方向に応じてヘッダーを表示 / 非表示
+- ヘッダー内に Contact CTA を配置し、ユーザー導線を意識した設計
 
-### 3. GSAP アニメーション
+### 3. Splide を用いたスライダー実装
 
-- ScrollTrigger によるスクロールアニメーション
-- SmoothScroll による自然なスクロール
-- ハンバーガーメニュー開閉アニメーション
+- auto-scroll を用いたギャラリースライダーの実装
+- スタッフ紹介用のカード型スライダーを実装し、一覧性と視認性を重視
+- Recruit ページでは hover による簡易パララックスを取り入れ、風景画像の臨場感を演出
 
-### 4. アクセシビリティを意識した HTML 設計
+### 4. デザイン再現性とレスポンシブ対応
 
-- aria 属性・alt の適切な付与 と セマンティックで読みやすい HTML 構造 を意識して実装
+- リキッドレイアウトを前提とし、画面幅に応じて自然に伸縮するレイアウト設計
+- ブレイクポイントは **900px** とし、メディアクエリによるレスポンシブ対応を実装
+- CSS Grid / subgrid を使用し、複数デバイスや文字量の変化でも崩れにくい構造を意識
+- PerfectPixel を用いて Figma デザインカンプとの再現性を確認
 
-### 5. CMS（管理画面）の利便性向上
-
-- CPT ごとの編集フィールドを最適化
-- ACF（無料版）で運用しやすい UI を構築
-- Contact Form 7 / SEO SIMPLE PACK / EWWW Image Optimizer / CloudSecure WP Security 等の実務的なプラグインを導入
-
-&nbsp;
+  &nbsp;
 
 ## 📂 Directory（主な構成）
 
@@ -144,16 +145,15 @@ Udemy 教材（【超実践 ①】Figma からの HP コーディング - Web �
 
 ## 💻 Development Environment（開発環境）
 
-- Local by Flywheel（WordPress）
-- VSCode / GitHub Copilot / Gemini Code Assist
+- Cursor
 - SCSS / Live Sass Compiler
-- ES Modules
-- ホットリロード環境（node_modules / BrowserSync）
+- JavaScript / ES Modules
 
 &nbsp;
 
 ## ⚠️ Notes（注意事項）
 
-- 本テーマは学習用に制作しています。
+- 本本サイトは学習目的で制作した架空サイトです。
+- デザインおよびコンテンツは実在の企業・サービスとは関係ありません。
 
 &nbsp;
