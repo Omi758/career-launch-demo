@@ -1,0 +1,61 @@
+@use "../global" as g;
+
+/*!
+component > page-kv
+------------------------------
+*/
+
+.c-page-kv {
+  background-color: var(--color-bg-light);
+  position: relative;
+}
+
+.c-page-kv-decoration {
+  display: block;
+  width: 100%;
+  height: 64rem;
+  background-color: var(--color-white);
+  border-top-left-radius: 30rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-default);
+  @include g.mq() {
+    height: 96rem;
+    border-top-left-radius: 50rem;
+  }
+}
+
+.c-page-kv-inner {
+  padding-top: 142rem;
+  @include g.mq() {
+    padding-top: 161rem;
+  }
+}
+
+.c-page-kv-title--en {
+  font-family: var(--font-family-en);
+  font-size: 55rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  // アニメーション初期状態（ちらつき防止）
+  visibility: hidden;
+  opacity: 0;
+  @include g.mq() {
+    font-size: 72rem;
+  }
+}
+
+.c-page-kv-title--ja {
+  color: var(--color-font-light);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  margin-top: 22rem;
+  // アニメーション初期状態（ちらつき防止）
+  visibility: hidden;
+  opacity: 0;
+  @include g.mq() {
+    margin-top: 28rem;
+  }
+}

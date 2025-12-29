@@ -1,0 +1,105 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-about
+------------------------------
+*/
+.top-about {
+  margin: 64rem 0;
+
+  @include g.mq() {
+    margin: 96rem 0;
+  }
+}
+
+.top-about-inner {
+  display: grid;
+  gap: 28rem;
+
+  @include g.mq() {
+    grid-template-columns: 50% 1fr;
+    gap: 59rem;
+  }
+}
+
+.top-about-content {
+  padding: 0 20rem;
+
+  @include g.mq() {
+    padding: 0 0 0 83rem;
+    margin-top: 40rem;
+  }
+}
+
+.top-about-copy {
+  font-size: 28rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-top: 16rem;
+
+  @include g.mq() {
+    font-size: 34rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top-about-copy--en {
+  color: var(--color-primary);
+  font-family: var(--font-family-en);
+  font-size: 15rem;
+  letter-spacing: 0.05em;
+  margin-top: 8rem;
+
+  @include g.mq() {
+    font-size: 16rem;
+  }
+}
+
+.top-about-text {
+  margin-top: 24rem;
+  font-size: 16rem;
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+
+  @include g.mq() {
+    font-size: 18rem;
+    margin-top: 32rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top-about-view-more {
+  margin-top: 14rem;
+  margin-left: auto;
+  width: fit-content;
+
+  @include g.mq() {
+    margin-top: 40rem;
+  }
+}
+
+.top-about-image {
+  width: 100%;
+  @include g.mq() {
+    width: 624rem;
+  }
+}
+
+.top-about-image img {
+  aspect-ratio: 355 / 237;
+  border-radius: 10rem 0 10rem 0;
+  margin-left: 20rem;
+  width: calc(100% - 20rem); // margin-left分を引く
+  @include g.mq() {
+    aspect-ratio: 624 / 670;
+    border-radius: 20rem 0 20rem 0;
+    margin-left: 0;
+    width: 100%;
+  }
+}

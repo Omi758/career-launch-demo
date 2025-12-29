@@ -1,0 +1,179 @@
+@use "../../global" as g;
+
+/*!
+page > service > service-detail
+------------------------------
+*/
+.service-detail-inner {
+  display: grid;
+  gap: 104rem;
+  @include g.mq() {
+    gap: 80rem;
+  }
+}
+
+.service-detail-container {
+  position: relative;
+  margin: 0 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24rem;
+
+  @include g.mq() {
+    margin: 0;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 335rem;
+    height: calc(100% + 20rem);
+    background-color: var(--color-bg-extra-light);
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-index-negative);
+    border-radius: 10rem;
+    @include g.mq() {
+      width: 50%;
+      height: 545rem;
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+      border-radius: 0;
+    }
+  }
+}
+
+.service-detail-image img {
+  width: 100%;
+  aspect-ratio: 287 / 187;
+  border-radius: 10rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10rem;
+  @include g.mq() {
+    width: 600rem;
+    aspect-ratio: 600 / 545;
+    border-radius: 0 14rem 14rem 0;
+  }
+}
+
+.service-detail-container:nth-child(2) {
+  @include g.mq() {
+    flex-direction: row;
+  }
+  &::after {
+    @include g.mq() {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.service-detail-container:nth-child(2) .service-detail-image img {
+  @include g.mq() {
+    border-radius: 14rem 0 0 14rem;
+  }
+}
+
+.service-detail-text-content {
+  width: 100%;
+  display: grid;
+  gap: 24rem;
+  @include g.mq() {
+    width: 50%;
+    padding: 48rem 50rem;
+  }
+}
+
+.service-detail-title {
+  display: grid;
+  gap: 4rem;
+}
+
+.service-detail-title--jp {
+  font-size: 20rem;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 28rem;
+  }
+}
+
+.service-detail-title--en {
+  font-family: var(--font-family-en);
+  font-size: 15rem;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  @include g.mq() {
+    font-size: 16rem;
+  }
+}
+
+.service-detail-text-wrapper {
+  display: grid;
+  gap: 16rem;
+}
+
+.service-detail-info {
+  font-size: 14rem;
+  letter-spacing: 0.05em;
+  color: var(--color-font-light);
+}
+
+.service-detail-copy {
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 16rem;
+  }
+  span {
+    @include g.mq() {
+      display: block;
+    }
+  }
+}
+
+.service-detail-list {
+  display: grid;
+  gap: 10rem;
+}
+
+.service-detail-list-item {
+  background-color: var(--color-primary);
+  border-radius: 6rem;
+  color: var(--color-white);
+  font-size: 16rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  padding: 20rem 20rem 20rem 58rem;
+  position: relative;
+  @include g.mq() {
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50vh;
+    background-image: url("../img/icon-check.svg");
+    background-size: 24rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 20rem;
+    transform: translateY(-50%);
+  }
+
+  span {
+    display: block;
+    @include g.mq() {
+      display: inline-block;
+    }
+  }
+}

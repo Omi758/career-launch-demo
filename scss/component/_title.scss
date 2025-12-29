@@ -1,0 +1,106 @@
+@use "../global" as g;
+
+/*!
+component > title
+------------------------------
+*/
+/* セクションタイトル_small */
+.c-section-title--s {
+  font-size: 16rem;
+  font-family: var(--font-family-en);
+  line-height: 1;
+  letter-spacing: 0.075em;
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: center;
+  // justify-content: center;
+  gap: 10rem;
+
+  @include g.mq() {
+    font-size: 20rem;
+    gap: 14rem;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50vh;
+    background-color: var(--color-primary);
+  }
+}
+
+/* セクションタイトル */
+.c-section-title {
+  line-height: 1;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+  gap: 14rem;
+  @include g.mq() {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 14rem;
+  }
+}
+
+.c-section-title--en {
+  font-family: var(--font-family-en);
+  font-size: 40rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  gap: 18rem;
+
+  @include g.mq() {
+    font-size: 50rem;
+    gap: 24rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50vh;
+    background-color: var(--color-primary);
+  }
+}
+
+.c-section-title--ja {
+  font-size: 14rem;
+  padding-left: 28rem;
+  color: var(--color-font-light);
+
+  @include g.mq() {
+    padding-left: 0;
+  }
+}
+
+/* セクションタイトル_white */
+.c-section-title--white {
+  color: var(--color-white);
+}
+
+.c-section-title--white > .c-section-title--en {
+  &::before {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50vh;
+    background-color: var(--color-white);
+  }
+}
+
+.c-section-title--white > .c-section-title--ja {
+  font-size: 14rem;
+  padding-left: 28rem;
+  color: var(--color-white);
+
+  @include g.mq() {
+    padding-left: 0;
+  }
+}

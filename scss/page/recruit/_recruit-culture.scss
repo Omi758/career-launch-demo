@@ -1,0 +1,65 @@
+@use "../../global" as g;
+
+/*!
+page > recruit > recruit-culture
+------------------------------
+*/
+
+.recruit-culture {
+  padding: 64rem 0;
+
+  @include g.mq() {
+    padding: 96rem 0;
+  }
+}
+
+// splide-trackにhover時に上がる分だけのpaddingを設ける
+.recruit-culture-slider {
+  padding-top: 40rem;
+
+  img {
+    width: 100%;
+    height: calc(100% + 10rem); // パララックス効果
+    object-fit: cover;
+
+    @include g.mq() {
+      transform: translateY(-10rem); // 初期値：10rem上げておく
+      transition: transform 0.3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+.recruit-culture-img-cover {
+  width: 223rem;
+  height: 149rem;
+  border-radius: 10rem;
+  overflow: hidden; // 画像を切り抜く
+  transition: transform 0.3s ease;
+
+  @include g.mq() {
+    width: 350rem;
+    height: 234rem;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-10rem);
+      }
+    }
+  }
+}
+
+// 回転する文字_位置設定
+.recruit-circle-wrapper {
+  margin-bottom: 64rem;
+  margin-inline: auto;
+
+  @include g.mq() {
+    margin-bottom: 96rem;
+  }
+}

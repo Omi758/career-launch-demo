@@ -1,0 +1,418 @@
+@use "../global" as g;
+
+/*!
+layout > header
+------------------------------
+*/
+// ================================
+// header（透明→白背景）
+// ================================
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20rem 12rem;
+  width: 100%;
+  z-index: var(--z-index-header);
+  background-color: transparent;
+
+  @include g.mq() {
+    padding: 24rem 65rem;
+  }
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ================================
+// ロゴ(初期：白/スクロール後：カラー)
+// ================================
+
+.header-logo-link {
+  display: inline-block;
+  width: 100%;
+}
+
+.header-logo img {
+  width: 240rem;
+  aspect-ratio: 290 / 53;
+
+  @include g.mq() {
+    width: 290rem;
+  }
+}
+.top-page .header-logo img {
+  filter: brightness(0) invert(1); // ロゴ白化(初期：透明ヘッダー)
+  transition: filter 0.2s ease; // is-scrolledクラスが付与されたらロゴをカラーに戻す
+}
+
+// ================================
+// モバイルメニュー
+// ================================
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: auto; // デフォルトでは左寄せになる為
+  right: 0;
+  width: 85%;
+  background-color: var(--color-primary);
+  border-radius: 0 0 0 30rem;
+  z-index: var(--z-index-modal);
+  overflow-y: scroll;
+  opacity: 0; // JS初期設定
+  visibility: hidden; // JS初期設定
+
+  @include g.mq() {
+    position: static;
+    display: block !important; // PC時はメニューを常に表示
+    right: auto;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    overflow-y: visible; // PC版ではスクロールバーを非表示
+    opacity: 1 !important; // GSAPのインラインスタイルを上書き
+    visibility: visible !important; // GSAPのインラインスタイルを上書き
+  }
+
+  &::backdrop {
+    background: transparent; // ネイティブ背景を無効化
+  }
+
+  // モーダル画面内のnavの下線を白に設定（SPサイズ）
+  .header-nav-item--en {
+    &::after {
+      background-color: var(--color-white);
+    }
+  }
+}
+
+// カスタム背景オーバーレイ（アニメーション可能）
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: calc(var(--z-index-modal) - 1); // dialogの直下に表示
+  opacity: 0; // JS初期設定
+  visibility: hidden; // JS初期設定
+
+  @include g.mq() {
+    display: none; // PC版では非表示
+  }
+}
+
+// ================================
+// ハンバーガーボタン(openボタン)
+// ================================
+.hamburger-open-btn {
+  display: block;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--color-primary);
+  cursor: pointer;
+  border-radius: 50vh;
+  position: relative;
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.hamburger-open-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  width: 100%;
+  height: 100%;
+}
+
+.dot {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-white);
+  border-radius: 50vh;
+  flex-shrink: 0;
+}
+
+// ================================
+// ハンバーガーボタン(closeボタン)
+// ================================
+
+.hamburger-close-btn {
+  position: absolute;
+  top: 20rem;
+  right: 12rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--color-white);
+  cursor: pointer;
+  border-radius: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.hamburger-close-icon {
+  display: block;
+  width: 14rem;
+  height: 15rem;
+  position: relative;
+
+  > span:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--color-primary);
+    width: 2rem;
+    height: 20rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  > span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--color-primary);
+    width: 2rem;
+    height: 20rem;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+// ================================
+// nav(SP/PC共通)
+// ================================
+.header-nav {
+  margin: 40rem auto 40rem 40rem;
+  @include g.mq() {
+    margin: 0;
+  }
+}
+
+.header-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+
+  @include g.mq() {
+    flex-direction: row;
+    align-items: center;
+    gap: 50rem;
+  }
+}
+
+.header-nav-item {
+  color: var(--color-white);
+  font-size: 28rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  @include g.mq() {
+    font-size: 18rem;
+    line-height: 1;
+  }
+
+  &--en {
+    font-family: var(--font-family-en);
+    position: relative;
+    display: inline-block; // 文字の幅に合わせて幅を設定
+    width: fit-content;
+
+    // hover-animation設定
+    @media (any-hover: hover) {
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 1rem;
+        background-color: var(--color-white);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s ease;
+        @include g.mq() {
+          bottom: -3rem;
+        }
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // PC版：最後の要素のhoverアニメーションを無効化
+  @include g.mq() {
+    &:last-child .header-nav-item--en {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &--ja {
+    font-family: var(--font-family-base);
+    font-size: 14rem;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    @include g.mq() {
+      display: none;
+    }
+  }
+
+  &--top {
+    @include g.mq() {
+      display: none;
+    }
+  }
+}
+
+.header-nav-link {
+  display: grid;
+  @include g.mq() {
+    display: block;
+    width: auto;
+  }
+}
+
+// ================================
+// コンタクトボタン(PC時表示)
+// ================================
+.is-cta {
+  .header-nav-link {
+    // SPサイズではtransitionを無効化_干渉防止
+    transition: none;
+
+    @include g.mq() {
+      padding: 9rem 31rem;
+      background-color: var(--color-primary);
+      border: 1rem solid var(--color-primary);
+      border-radius: 50vh;
+      transition: background-color 0.3s, border 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9rem;
+      color: var(--color-white); // テキストを白に
+
+      &::before {
+        content: "";
+        display: block;
+        mask-image: url(../img/icon-mail.svg);
+        mask-size: contain;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        background-color: var(--color-white);
+        width: 16rem;
+        height: 14rem;
+        flex-shrink: 0; // 縮み防止
+        transition: background-color 0.3s ease;
+      }
+      // hover設定
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--color-white);
+          color: var(--color-primary);
+          border: 1rem solid var(--color-primary);
+          &::before {
+            background-color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ================================
+// is-scrolledクラスを付与
+// スクロールしたら背景色を白＆ロゴをカラーに変換
+// navの文字色をbaseに変換
+// ================================
+.is-scrolled {
+  position: fixed; // KVが消えた後も画面上部に固定
+  background-color: var(--color-white-transparent);
+
+  .header-logo img {
+    filter: none; // ロゴをカラーに戻す
+  }
+
+  .header-nav-link {
+    @include g.mq() {
+      color: var(--color-font-base);
+    }
+  }
+
+  .header-nav-item:not(:last-child) .header-nav-item--en {
+    @include g.mq() {
+      &::after {
+        background-color: var(--color-font-base); // 下線の色:baseに変更
+      }
+    }
+  }
+
+  .is-cta .header-nav-link {
+    @include g.mq() {
+      color: var(--color-white); // Contactの文字は白
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+// ================================
+// 下層ページのヘッダー
+// ================================
+.sub-page {
+  .header-logo img {
+    filter: none; // ロゴカラー(初期値：カラー）
+  }
+
+  .header-nav-item {
+    &:not(.is-cta) .header-nav-item--en {
+      @include g.mq() {
+        color: var(--color-font-base);
+      }
+      &::after {
+        @include g.mq() {
+          background-color: var(--color-font-base); // 下線の色:baseに変更
+        }
+      }
+    }
+  }
+}
+.header-nav-item--en.is-active {
+  @include g.mq() {
+    color: var(--color-primary) !important;
+  }
+
+  &::after {
+    @include g.mq() {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1rem;
+      background-color: var(--color-primary) !important;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+      bottom: -3rem;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

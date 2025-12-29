@@ -1,0 +1,146 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-recruit
+------------------------------
+*/
+.top-recruit {
+  margin: 64rem 0;
+
+  @include g.mq() {
+    margin: 96rem 0;
+  }
+}
+
+.top-recruit-bg-wrapper {
+  position: relative;
+}
+
+.top-recruit-bg-picture {
+  position: relative;
+  z-index: var(--z-index-negative);
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.top-recruit-copy--en {
+  position: absolute;
+  bottom: -33rem;
+  left: 20rem;
+  z-index: var(--z-index-default);
+  font-family: var(--font-family-en);
+  font-size: 86rem;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  color: var(--color-primary);
+
+  @include g.mq() {
+    font-size: 150rem;
+    bottom: -60rem;
+    left: 83rem;
+  }
+}
+.top-recruit-inner {
+  display: grid;
+  margin: 80rem 0 64rem;
+  gap: 64rem;
+  overflow-x: hidden; // SP版での横スクロールを防ぐ
+
+  @include g.mq() {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 118rem 0 96rem;
+    gap: 0; // gapを削除（回転する画像が切れないように）
+  }
+}
+
+.top-recruit-text-container {
+  width: 100%;
+
+  @include g.mq() {
+    padding-bottom: 82rem;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+
+.top-recruit-copy--ja {
+  font-size: 28rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-top: 16rem;
+
+  @include g.mq() {
+    font-size: 34rem;
+  }
+  span {
+    display: block;
+
+    @include g.mq() {
+      display: inline;
+    }
+  }
+}
+
+.top-recruit-text {
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  margin-top: 24rem;
+
+  @include g.mq() {
+    margin-top: 32rem;
+  }
+
+  span {
+    @include g.mq() {
+      display: block;
+    }
+  }
+}
+
+.top-recruit-text-container--en {
+  margin-top: 14rem;
+  font-family: var(--font-family-en);
+  font-size: 15rem;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+
+  @include g.mq() {
+    margin-top: 24rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top-recruit-circle-wrapper {
+  overflow: hidden; // SP版での回転時の横スクロールを防ぐ
+  align-self: center; // SP版: 中央配置
+
+  @include g.mq() {
+    margin-top: 80rem;
+    margin-right: 148rem; // gapの代わりに余白を確保（回転画像が切れないように）
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: start; // PC版: 上部
+    justify-self: end; // PC版: 右寄せ
+  }
+}
+
+/* ===========================================
+   スクロールアニメーション用の初期設定
+   =========================================== */
+/* TOPページRecruit */
+.top-recruit-copy--en {
+  visibility: hidden;
+}

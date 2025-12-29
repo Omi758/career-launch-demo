@@ -1,0 +1,106 @@
+@use "../global" as g;
+
+/*!
+component > pagination
+------------------------------
+*/
+
+.c-pagination-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+
+.c-pagination-item {
+  width: 40rem;
+  height: 40rem;
+  background-color: var(--color-bg-light);
+  border-radius: 50vh;
+  transition: background-color 0.3s ease;
+
+  &:has(.c-pagination-dots) {
+    background-color: transparent;
+  }
+
+  // prev/nextボタンの背景色
+  &:has(.c-pagination-link--prev),
+  &:has(.c-pagination-link--next) {
+    background-color: var(--color-bg-light);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+.c-pagination-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50vh;
+  font-size: 16rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.is-active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50vh;
+  }
+
+  &--prev,
+  &--next {
+    background-color: var(--color-font-base); // 矢印色アイコン色：通常時
+    mask-image: url(../img/icon-arrow.svg);
+    mask-size: 10rem 10rem;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: background-color 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--color-white); // 矢印アイコン色：hover時
+      }
+    }
+  }
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+
+  // 通常のページ番号リンクのhover（prev/next以外）
+  &:not(&--prev):not(&--next):hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
+
+// ページネーション_三点リーダー
+.c-pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.c-pagination-dots-icon {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--color-font-base);
+  mask-image: url(../img/icon-dots.svg);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url(../img/icon-dots.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+}

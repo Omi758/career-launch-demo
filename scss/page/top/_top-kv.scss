@@ -1,0 +1,186 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-kv
+------------------------------
+*/
+
+.top-kv-inner {
+  position: relative;
+}
+
+.top-kv-image {
+  position: relative;
+  // height: 100%;
+}
+.top-kv-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-kv-content {
+  position: absolute;
+  bottom: 47rem;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-index-default);
+  @include g.mq() {
+    bottom: 190rem;
+  }
+}
+
+.top-kv-copy--en {
+  font-family: var(--font-family-en);
+  font-size: 43rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: 0.025em;
+  color: var(--color-white);
+  text-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.0588);
+
+  @include g.mq() {
+    font-size: 101rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top-kv-copy--ja {
+  color: var(--color-white);
+  font-size: 18rem;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+  margin-top: 21rem;
+  @include g.mq() {
+    font-size: 22rem;
+    margin-top: 54rem;
+  }
+}
+
+.top-kv-scroll-container {
+  display: none;
+  @include g.mq() {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 83rem;
+    height: 171rem;
+    z-index: var(--z-index-default);
+    background-color: var(--color-white);
+    border-radius: 39rem 0 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -46rem;
+      width: 46rem;
+      height: 46rem;
+      z-index: var(--z-index-header);
+      background-image: url("../img/top/curve.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.top-kv-scroll-inner {
+  @include g.mq() {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 6rem;
+    position: absolute;
+    bottom: 42rem;
+    right: 22rem;
+    z-index: var(--z-index-default);
+  }
+}
+.top-kv-scroll-text {
+  @include g.mq() {
+    font-family: var(--font-family-en);
+    font-size: 15rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    writing-mode: vertical-rl;
+  }
+}
+
+.top-kv-scroll-icon-wrapper {
+  @include g.mq() {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(84rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(84rem);
+    opacity: 0;
+  }
+}
+
+.top-kv-scroll-icon--line {
+  @include g.mq() {
+    display: block;
+    width: 2rem;
+    height: 80rem;
+    background-color: var(--color-primary);
+    border-radius: 50vw;
+    transform-origin: top;
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+}
+
+.top-kv-scroll-icon--dot {
+  @include g.mq() {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-primary);
+    border-radius: 50vh;
+    animation: scroll-dot 2s ease-in-out infinite;
+  }
+}
+
+/* ===========================================
+   スクロールアニメーション用の初期設定
+   =========================================== */
+/* TOPページKV */
+.top-kv-copy--en span,
+.top-kv-copy--ja {
+  visibility: hidden;
+}

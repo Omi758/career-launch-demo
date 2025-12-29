@@ -1,0 +1,235 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 54rem 0;
+  @include g.mq() {
+    padding: 54rem 65rem 32rem;
+  }
+}
+
+.footer-inner {
+  display: grid;
+  gap: 24rem;
+  justify-content: center;
+  @include g.mq() {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    gap: 80rem 0;
+  }
+}
+
+.footer-logo {
+  margin-inline: auto;
+  width: 250rem;
+  aspect-ratio: 250 / 46;
+  @include g.mq() {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-inline: 0;
+  }
+}
+
+.footer-logo-link {
+  width: 100%;
+}
+
+.footer-nav {
+  margin-inline: auto;
+  font-family: var(--font-family-en);
+  font-size: 18rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  @include g.mq() {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    gap: 55rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer-nav-list {
+  display: flex;
+  gap: 32rem;
+  @include g.mq() {
+    gap: 55rem;
+  }
+}
+
+.footer-nav-item {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.footer-nav-link {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1rem;
+    background-color: currentColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer-nav-item--cta {
+  width: 100%;
+  margin-top: 16rem;
+  padding: 9rem 0;
+  text-align: center;
+  background-color: var(--color-primary);
+  border: 1rem solid var(--color-white);
+  border-radius: 50vh;
+  display: flex;
+  gap: 9rem;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, border 0.3s ease;
+
+  @include g.mq() {
+    width: auto;
+    margin-top: 0;
+    padding: 9rem 31rem;
+    border-radius: 50vh;
+    color: var(--color-white);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    mask-image: url(../img/icon-mail.svg);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: var(--color-white);
+    width: 16rem;
+    height: 13rem;
+    flex-shrink: 0; // 縮み防止
+    transition: background-color 0.3s ease;
+    @include g.mq() {
+      width: 15rem;
+      height: 12rem;
+    }
+  }
+
+  // hover設定
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+      border: 1rem solid var(--color-primary);
+      &::before {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+.footer-address-wrapper {
+  margin-inline: auto;
+  display: grid;
+  text-align: center;
+  gap: 10rem;
+  font-size: 13rem;
+  letter-spacing: 0.07em;
+  @include g.mq() {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    gap: 5rem;
+    margin-inline: 0;
+  }
+}
+
+.footer-company-name {
+  @include g.mq() {
+    text-align: left;
+  }
+}
+.footer-address {
+  span {
+    display: block;
+    @include g.mq() {
+      display: inline;
+    }
+  }
+}
+
+.footer-tel-fax-wrapper {
+  display: flex;
+  gap: 12rem;
+}
+
+.footer-company-privacy-wrapper {
+  margin-inline: auto;
+  @include g.mq() {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    margin-inline: 0;
+    align-self: center;
+  }
+}
+
+.footer-company-policy {
+  display: flex;
+  justify-content: center;
+  gap: 20rem;
+  font-family: var(--font-family-en);
+  font-size: 14rem;
+  letter-spacing: 0.02em;
+  @include g.mq() {
+    justify-content: flex-end;
+  }
+}
+.footer-company,
+.footer-privacy {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    background-color: var(--color-white);
+    transition: width 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  font-size: 12rem;
+  letter-spacing: 0.07em;
+  opacity: 0.7;
+  @include g.mq() {
+    display: block;
+    text-align: right;
+    margin-top: 10rem;
+  }
+}
