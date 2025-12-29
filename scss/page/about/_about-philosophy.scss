@@ -1,0 +1,77 @@
+@use "../../global" as g;
+
+/*!
+page > about > about-philosophy
+------------------------------
+*/
+
+.about-philosophy-inner {
+  padding-bottom: 64rem;
+  @include g.mq() {
+    padding-bottom: 96rem;
+  }
+}
+
+.about-philosophy-container {
+  margin-top: 48rem;
+  @include g.mq() {
+    margin-top: 64rem;
+  }
+}
+
+.about-philosophy-list {
+  display: grid;
+  gap: 24rem;
+  width: fit-content;
+  margin-inline: auto;
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40rem;
+  }
+}
+
+.about-philosophy-item {
+  background-color: var(--color-bg-light);
+  border-radius: 50vh;
+  width: 300rem;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  gap: 16rem;
+  // アニメーション初期状態（ちらつき防止）
+  visibility: hidden;
+  opacity: 0;
+
+  @include g.mq() {
+    width: 352rem;
+  }
+}
+
+.about-philosophy-item-title {
+  font-family: var(--font-family-en);
+  color: var(--color-primary);
+  font-size: 23rem;
+  letter-spacing: 0.02em;
+}
+
+.about-philosophy-item-text {
+  font-size: 22rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+
+  span {
+    display: block;
+  }
+}
+
+.about-philosophy-item-subtext {
+  color: var(--color-font-light);
+  font-size: 14rem;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+
+  span {
+    display: block;
+  }
+}

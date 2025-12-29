@@ -1,0 +1,15 @@
+@use "../../global" as g;
+
+/*!
+page > contact > contact-form
+------------------------------
+*/
+.contact-form {
+  position: relative;
+  z-index: var(--z-index-default);
+  margin-bottom: 64rem;
+
+  @include g.mq() {
+    margin-bottom: 96rem;
+  }
+}

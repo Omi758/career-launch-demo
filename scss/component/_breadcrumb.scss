@@ -1,0 +1,78 @@
+@use "../global" as g;
+
+/*!
+component > breadcrumb
+------------------------------
+*/
+.c-breadcrumb {
+  padding: 32rem 0 84rem;
+  position: relative;
+
+  @include g.mq() {
+    padding: 56rem 0 116rem;
+  }
+}
+
+.c-breadcrumb-list {
+  display: flex;
+  justify-content: end;
+}
+
+.c-breadcrumb-item {
+  color: var(--color-font-light);
+  font-family: var(--font-family-en);
+  font-size: 14rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+
+  @include g.mq() {
+    font-size: 16rem;
+  }
+
+  &:not(:last-child) {
+    &::after {
+      content: "";
+      background-image: url(../img/icon-arrow.svg);
+      width: 11rem;
+      height: 9rem;
+      margin: 0 10rem;
+      display: block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.c-breadcrumb-link {
+  width: fit-content;
+  position: relative;
+  padding-bottom: 3rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1rem;
+    background-color: var(--color-font-light);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.c-breadcrumb-link--current {
+  width: fit-content;
+  color: var(--color-primary);
+}

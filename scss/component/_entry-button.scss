@@ -1,0 +1,123 @@
+@use "../global" as g;
+
+/*!
+component > entry-button
+- 回転する文字_imgをcssアニメーションで回転させる
+------------------------------
+*/
+// 回転する文字(imgを回転)
+.c-recruit-circle-wrapper {
+  display: block; // aタグで使用する場合に必要
+  position: relative;
+  width: 290rem;
+  height: 294rem;
+  margin: 0 auto;
+  overflow: hidden; // SP版での回転時の横スクロール防止
+  @include g.mq() {
+    width: 355rem;
+    height: 360rem;
+    margin: 0;
+  }
+
+  // aタグ全体のhoverでimg・ボタン両方にopacityを適用
+  @media (any-hover: hover) {
+    &:hover {
+      .c-recruit-circle-image,
+      .c-entry-btn-link {
+        opacity: 0.7;
+      }
+
+      .c-entry-btn-link span {
+        background-color: var(--color-white);
+        border-color: var(--color-primary);
+
+        &::after {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+.c-recruit-circle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+
+  animation: rotate 20s linear infinite; // 20秒で一周
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* entryボタン */
+.c-entry-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-index-default);
+  display: flex;
+  align-items: center;
+  gap: 14rem;
+  @include g.mq() {
+    gap: 24rem;
+  }
+}
+
+.c-entry-btn-link {
+  display: flex;
+  align-items: center;
+  gap: 14rem;
+  font-family: var(--font-family-en);
+  font-size: 18rem;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+
+  @include g.mq() {
+    font-size: 20rem;
+    gap: 24rem;
+  }
+}
+
+.c-entry-btn-link > span {
+  display: grid;
+  place-items: center;
+  width: 45rem;
+  height: 45rem;
+  border-radius: 50vh;
+  border: 1rem solid var(--color-primary);
+  background-color: var(--color-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  @include g.mq() {
+    width: 57rem;
+    height: 57rem;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50vh;
+    background-color: var(--color-white);
+    transition: background-color 0.3s ease;
+
+    @include g.mq() {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}

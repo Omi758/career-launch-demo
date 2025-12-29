@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Career Launch - 就活スクール</title>
+    <meta
+      name="description"
+      content="就活スクールのキャリアランチは、学生一人ひとりが自分らしく社会に踏み出せるよう、キャリア形成を全力で支援します。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/webclip.png" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Zen+Kaku+Gothic+New:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- js -->
+    <script src="js/vendor/gsap.min.js" defer></script>
+    <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- noindex -->
+    <meta name="robots" content="noindex" />
+  </head>
+  <body class="top-page">
+    <header class="header js-header">
+      <div class="header-inner">
+        <h1 class="header-logo">
+          <a href="index.html" class="header-logo-link">
+            <img
+              src="img/logo.svg"
+              alt="Career Launch"
+              width="251"
+              height="46"
+              decoding="async"
+            />
+          </a>
+        </h1>
+        <!-- hamburger menu -->
+        <div class="menu-backdrop js-menu-backdrop"></div>
+        <dialog class="mobile-menu js-menu-dialog" aria-label="メニュー">
+          <button
+            class="hamburger-close-btn js-hamburger-close"
+            aria-label="メニューを閉じる"
+          >
+            <span class="hamburger-close-icon">
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          <nav class="header-nav" aria-label="メインメニュー">
+            <ul class="header-nav-list">
+              <li class="header-nav-item header-nav-item--top">
+                <a href="index.html" class="header-nav-link"
+                  ><span class="header-nav-item--en" lang="en">Top</span>
+                  <span class="header-nav-item--ja">トップ</span>
+                </a>
+              </li>
+
+              <li class="header-nav-item">
+                <a href="about.html" class="header-nav-link"
+                  ><span class="header-nav-item--en" lang="en">About</span>
+                  <span class="header-nav-item--ja">私たちについて</span>
+                </a>
+              </li>
+              <li class="header-nav-item">
+                <a href="service.html" class="header-nav-link">
+                  <span class="header-nav-item--en" lang="en">Service</span>
+                  <span class="header-nav-item--ja">サービス</span>
+                </a>
+              </li>
+              <li class="header-nav-item">
+                <a href="news.html" class="header-nav-link">
+                  <span class="header-nav-item--en" lang="en">News</span>
+                  <span class="header-nav-item--ja">お知らせ</span>
+                </a>
+              </li>
+              <li class="header-nav-item">
+                <a href="recruit.html" class="header-nav-link">
+                  <span class="header-nav-item--en" lang="en">Recruit</span>
+                  <span class="header-nav-item--ja">採用情報</span>
+                </a>
+              </li>
+              <li class="header-nav-item is-cta">
+                <a href="contact.html" class="header-nav-link">
+                  <span class="header-nav-item--en" lang="en">Contact</span>
+                  <span class="header-nav-item--ja">お問い合わせ</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </dialog>
+        <!-- hamburger menu end -->
+
+        <button
+          class="hamburger-open-btn js-hamburger-open"
+          aria-label="メニューを開く"
+        >
+          <span class="hamburger-open-icon">
+            <span class="dot dot-top"></span>
+            <span class="dot dot-middle"></span>
+            <span class="dot dot-bottom"></span>
+          </span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- top-kv -->
+      <div class="top-kv js-kv">
+        <div class="top-kv-inner">
+          <div class="top-kv-image">
+            <picture>
+              <source
+                media="(max-width: 899px)"
+                srcset="img/top/top-kv-sp.jpg"
+              />
+              <img
+                src="img/top/top-kv.jpg"
+                alt="キャリアアドバイザーとスクール生がPCを前に談笑する様子の画像"
+                width="1920"
+                height="1080"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
+            <div class="top-kv-content l-container">
+              <p class="top-kv-copy--en js-top-kv-copy--en" lang="en">
+                <span>Shape your future,</span><span>your way.</span>
+              </p>
+              <p class="top-kv-copy--ja js-top-kv-copy--ja">
+                自分らしさが、キャリアになる。
+              </p>
+            </div>
+          </div>
+          <div class="top-kv-scroll-container">
+            <div class="top-kv-scroll-inner">
+              <span class="top-kv-scroll-text">Scroll</span>
+              <div class="top-kv-scroll-icon-wrapper">
+                <span class="top-kv-scroll-icon--line"></span>
+                <span class="top-kv-scroll-icon--dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- top-kv end -->
+      <!-- top-about -->
+      <section class="top-about">
+        <div class="top-about-inner">
+          <div class="top-about-content">
+            <h2 class="top-about-title c-section-title--s">About</h2>
+            <p class="top-about-copy">
+              <span>あなたの「らしさ」が、</span>
+              <span>未来をつくる。</span>
+            </p>
+            <span class="top-about-copy--en"
+              >Your uniqueness shapes your future.</span
+            >
+
+            <p class="top-about-text">
+              <span
+                >私たち就活スクールは、学生一人ひとりが自分らしく社会に踏み出せるよう、キャリア形成を全力で支援します。</span
+              >
+              <span
+                >時代が変わっても、自分を理解し、自分の言葉で語れる力は社会で通用します。</span
+              >
+              <span
+                >あなたの“納得のいく一歩”を、私たちと一緒に見つけませんか？</span
+              >
+            </p>
+            <a href="about.html" class="top-about-view-more c-view-more-btn">
+              <div class="c-view-more-link">View more</div>
+              <span></span>
+            </a>
+          </div>
+
+          <div class="top-about-image js-top-about-image">
+            <picture class="top-about-image-picture">
+              <source
+                media="(max-width: 899px)"
+                srcset="img/top/top-about-sp.jpg"
+              />
+              <img
+                src="img/top/top-about.jpg"
+                alt="前を向き颯爽と歩くスクール生の画像"
+                width="1248"
+                height="1340"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!-- top-about end -->
+      <!-- top-service -->
+      <section class="top-service js-top-service">
+        <div class="l-container">
+          <div class="top-service-inner">
+            <div class="top-service-header">
+              <div class="c-section-title c-section-title--white">
+                <h2 class="c-section-title--en" lang="en">Service</h2>
+                <span class="c-section-title--ja">サービス</span>
+              </div>
+              <p class="top-service-header-text">
+                <span>就活の「不安」を「自信」に変える2つのプログラム。</span>
+                <span
+                  >自己理解から実践対策まで、一人ひとりに合わせて丁寧にサポートします。</span
+                >
+              </p>
+            </div>
+
+            <div class="top-service-cards">
+              <article class="top-service-card-item">
+                <a href="service.html" class="top-service-card-link">
+                  <picture class="top-service-card-image">
+                    <source
+                      media="(max-width: 899px)"
+                      srcset="img/top/top-services-sp.jpg"
+                    />
+                    <img
+                      src="img/top/top-services.jpg"
+                      alt="キャリア設計サポートの画像"
+                      width="674"
+                      height="770"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div class="top-service-card-header">
+                    <h3 class="top-service-card-title">キャリア設計サポート</h3>
+                    <p class="top-service-card-title--en">
+                      Ministry of Education
+                    </p>
+                  </div>
+                  <p class="top-service-card-text">
+                    <span>自己理解からはじまる“納得のいく選択”。</span>
+                    <span
+                      >価値観・強み・志向性を明確にし、将来の軸をつくります。</span
+                    >
+                  </p>
+                  <div
+                    class="top-service-card-view-more c-view-more-btn--small"
+                  >
+                    <div class="c-view-more-link--small">View more</div>
+                    <span></span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="top-service-card-item">
+                <a href="service.html" class="top-service-card-link">
+                  <picture class="top-service-card-image">
+                    <source
+                      media="(max-width: 899px)"
+                      srcset="img/top/top-services02-sp.jpg"
+                    />
+                    <img
+                      src="img/top/top-services02.jpg"
+                      alt="実践対策プログラムの画像"
+                      width="674"
+                      height="770"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div class="top-service-card-header">
+                    <h3 class="top-service-card-title">実践対策プログラム</h3>
+                    <p class="top-service-card-title--en">
+                      Job Preparation Bootcamp
+                    </p>
+                  </div>
+                  <p class="top-service-card-text">
+                    <span>書ける・話せる・伝わる就活力を。</span>
+                    <span
+                      >ES添削、模擬面接、GD演習など、実戦的なサポートを行います。</span
+                    >
+                  </p>
+                  <div
+                    class="top-service-card-view-more c-view-more-btn--small"
+                  >
+                    <div class="c-view-more-link--small">View more</div>
+                    <span></span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- top-service end -->
+
+      <!-- top-recruit -->
+      <section class="top-recruit js-top-recruit">
+        <div class="top-recruit-bg-wrapper">
+          <picture class="top-recruit-bg-picture">
+            <source
+              media="(max-width: 899px)"
+              srcset="img/top/top-recruit-sp.jpg"
+            />
+            <img
+              src="img/top/top-recruit.jpg"
+              alt=""
+              width="1920"
+              height="1080"
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
+          <p class="top-recruit-copy--en js-top-recruit-copy--en" lang="en">
+            Join us
+          </p>
+        </div>
+
+        <div class="top-recruit-inner l-container">
+          <div class="top-recruit-text-container">
+            <h2 class="c-section-title--s">Recruit</h2>
+            <p class="top-recruit-copy--ja">
+              <span>誰かの未来を、</span><span>支える仕事。</span>
+            </p>
+
+            <div class="top-recruit-text">
+              <p>就職活動は、人生の転機。</p>
+              <span>その一歩を支える私たちの仕事には、誇りがあります。</span>
+              <span>受講生一人ひとりと真剣に向き合い、可能性を引き出す、</span>
+              <span>そんな役割に、あなたも参加しませんか？</span>
+            </div>
+
+            <div class="top-recruit-text-container--en">
+              <p class="top-recruit-text--en">
+                <span>Join us in guiding students to their next chapter. </span>
+                <span>Your support could change someone’s future.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 回転する文字 -->
+          <a
+            href="recruit.html"
+            class="top-recruit-circle-wrapper c-recruit-circle-wrapper"
+          >
+            <img
+              class="c-recruit-circle-image"
+              src="img/recruit-button-text.svg"
+              width="355"
+              height="360"
+              alt="Join us, Career Launch!"
+              decoding="async"
+              loading="lazy"
+            />
+
+            <div class="c-entry-btn">
+              <div class="c-entry-btn-link">
+                Entry Form
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- top-recruit end -->
+      <!-- top-news -->
+      <section class="top-news">
+        <div class="top-news-inner l-container">
+          <div class="top-news-header c-section-title">
+            <h2 class="c-section-title--en">News</h2>
+            <span class="c-section-title--ja">お知らせ</span>
+          </div>
+
+          <ul class="top-news-list c-news-list">
+            <li class="c-news-item">
+              <a href="#" class="c-news-link"
+                ><time datetime="2025-06-10">2025.06.10</time>
+                8月の夏期集中コース申込受付開始</a
+              >
+            </li>
+            <li class="c-news-item">
+              <a href="#" class="c-news-link"
+                ><time datetime="2025-06-10">2025.06.10</time>
+                夜間模擬面接会（6月開催）参加者募集中</a
+              >
+            </li>
+            <li class="c-news-item">
+              <a href="#" class="c-news-link"
+                ><time datetime="2025-06-10">2025.06.10</time>
+                新オフィス（東京・神田）オープン</a
+              >
+            </li>
+            <li class="c-news-item">
+              <a href="#" class="c-news-link"
+                ><time datetime="2025-06-10">2025.06.10</time>
+                大学連携キャリアセミナーの実施決定</a
+              >
+            </li>
+          </ul>
+
+          <a href="news.html" class="top-news-view-more-btn c-view-more-btn">
+            <div class="c-view-more-link">View more</div>
+            <span></span>
+          </a>
+        </div>
+      </section>
+      <!-- top-news end -->
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="img/logo-white.svg"
+              alt="Career Launch"
+              width="251"
+              height="46"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        <address class="footer-address-wrapper">
+          <span class="footer-company-name">株式会社Career Launch</span>
+          <p class="footer-address">
+            <span>〒101-0045</span>
+            <span>東京都千代田区神田鍛冶町3-2-1</span>
+            <span>神田サクラビル5F</span>
+          </p>
+          <div class="footer-tel-fax-wrapper">
+            <a href="tel:03-1234-5678" class="footer-tel">TEL：03-1234-5678</a>
+            <a href="#" class="footer-fax">FAX：03-1234-5679</a>
+          </div>
+        </address>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <a href="about.html" class="footer-nav-link"
+                ><span class="footer-nav-item--en" lang="en">About</span>
+              </a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="service.html" class="footer-nav-link">
+                <span class="footer-nav-item--en" lang="en">Service</span>
+              </a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="news.html" class="footer-nav-link">
+                <span class="footer-nav-item--en" lang="en">News</span>
+              </a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="recruit.html" class="footer-nav-link">
+                <span class="footer-nav-item--en" lang="en">Recruit</span>
+              </a>
+            </li>
+          </ul>
+          <div class="footer-nav-item--cta">
+            <a href="contact.html">
+              <span class="footer-nav-item--en" lang="en">Contact</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="footer-company-privacy-wrapper">
+          <div class="footer-company-policy">
+            <a href="#" class="footer-company" lang="en">Company</a>
+            <a href="#" class="footer-privacy" lang="en">Privacy Policy</a>
+          </div>
+          <small class="footer-copyright">© 2025 株式会社Career Launch</small>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </body>
+</html>

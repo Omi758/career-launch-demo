@@ -1,0 +1,22 @@
+@use "../../global" as g;
+
+/*!
+page > news > news-archive
+------------------------------
+*/
+
+.news-archive-list {
+  margin-bottom: 48rem;
+  @include g.mq() {
+  }
+}
+.news-archive-item:nth-child(1) a {
+  padding-top: 0;
+}
+
+.news-archive-pagination {
+  margin-bottom: 64rem;
+  @include g.mq() {
+    margin-bottom: 97rem;
+  }
+}

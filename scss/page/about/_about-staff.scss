@@ -1,0 +1,125 @@
+@use "../../global" as g;
+
+/*!
+page > about > about-staff
+------------------------------
+*/
+.about-staff {
+  position: relative;
+  margin-bottom: 64rem;
+  @include g.mq() {
+    margin-bottom: 96rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 430rem;
+    background-color: var(--color-primary);
+    position: absolute;
+    z-index: var(--z-index-negative);
+    top: 0;
+    left: 0;
+    border-radius: 0 0 0 50rem;
+    @include g.mq() {
+      width: 97%;
+      height: 390rem;
+      right: 0;
+      left: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.about-staff-inner {
+  padding-top: 41rem;
+  @include g.mq() {
+    padding-top: 54rem;
+  }
+}
+
+.about-staff-title-container {
+  display: grid;
+  gap: 20rem;
+  @include g.mq() {
+    grid-template-columns: 1fr auto;
+    gap: 0;
+  }
+}
+
+.about-staff-text {
+  color: var(--color-white);
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 16rem;
+    align-self: end;
+  }
+}
+
+.about-staff-slider {
+  margin-top: 40rem;
+  @include g.mq() {
+    margin-top: 64rem;
+  }
+}
+
+.about-staff-slide-card article {
+  display: grid;
+}
+.about-staff-slide-card figure {
+  width: 100%;
+  margin: 0;
+}
+
+.about-staff-slide-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10rem;
+  @include g.mq() {
+    border-radius: 20rem;
+  }
+}
+
+.about-staff-item-role {
+  margin-top: 16rem;
+  font-size: 14rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--color-primary);
+    border-radius: 50vh;
+  }
+}
+
+.about-staff-item-name-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16rem;
+}
+
+.about-staff-item-name {
+  font-size: 20rem;
+  letter-spacing: 0.08em;
+  @include g.mq() {
+    font-size: 24rem;
+  }
+}
+
+.about-staff-item-name--en {
+  color: var(--color-font-light);
+  font-size: 14rem;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 16rem;
+  }
+}
