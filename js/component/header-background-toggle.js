@@ -14,7 +14,6 @@
  * 4. GSAPでアニメーション実行
  */
 export const initializeHeaderBackgroundToggle = () => {
-  // ScrollTriggerプラグインを登録
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +31,7 @@ export const initializeHeaderBackgroundToggle = () => {
 
     // headerをスライド表示する関数
     const showHeader = () => {
-      if (isHeaderVisible || isAnimating) return; // すでに表示されているかアニメーション中の場合は何もしない
+      if (isHeaderVisible || isAnimating) return;
 
       isAnimating = true;
 
