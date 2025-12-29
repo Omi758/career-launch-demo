@@ -1,0 +1,12 @@
+# エディタ設定
+.vscode/
+
+# npm
+node_modules/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# Sass
+*.map
