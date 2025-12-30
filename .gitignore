@@ -10,3 +10,6 @@ Thumbs.db
 
 # Sass
 *.map
+
+# 公開用フォルダ
+dist/
